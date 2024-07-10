@@ -1,0 +1,25 @@
+int calculateIndices(int* nums1, int n, int* nums2, int m) {
+    int answer1 = 0, answer2 = 0;
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (nums1[i] == nums2[j]) {
+                answer1++;
+                break;
+            }
+        }
+    }
+    
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (nums2[i] == nums1[j]) {
+                answer2++;
+                break;
+            }
+        }
+    }
+    
+    return answer1 + answer2;
+}
+Input: nums1 = [2,3,2], nums2 = [1,2]
+Output: [2,1]
